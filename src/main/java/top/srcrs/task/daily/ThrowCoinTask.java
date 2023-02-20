@@ -124,6 +124,7 @@ public class ThrowCoinTask implements Task {
      */
     public Integer getReward() {
         JSONObject jsonObject = Request.get("https://account.bilibili.com/home/reward");
+        log.info("【getReward返回的结果为】：{}",jsonObject);
         return Integer.parseInt(jsonObject.getJSONObject("data").getString("coins_av"));
     }
 
